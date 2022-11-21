@@ -1,0 +1,11 @@
+// a*4 = a+a+a+a
+
+CHIP Mult4{
+     IN in[16];
+     OUT out[16];
+     
+     PARTS:
+	 Add16(a=in, b=in, out=zbr1);
+	 Add16(a=zbr1, b=in, out=zbr2);
+	 Add16(a=zbr2, b=in, out=out); 
+}
